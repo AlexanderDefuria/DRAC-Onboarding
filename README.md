@@ -13,6 +13,16 @@ This project's goal is to revise the current DRAC ARC "Getting Started" and onbo
 - Creation of written and video guides that are identical in content.
 - Community consultation to improve dissemination of information.
 
+### Roadmap
+- Nov '24 - Meetings with community and potential users to gain feedback about curret process.
+- Dec '24 - Deconstructing recordings and current wiki to extract relevant information.
+- Dec '24 - Outlining a new style guide and setting up project.
+- Jan '25 - Completing "Getting Started" first iteration.
+- Jan '25 - Presenting work at OLS.
+- Feb '25 - Workshop for University of Ottawa and community to evaluate and improve the onboarding process.
+- Mar '25 - Revised guide and process.
+- Mar '25 - Hosting final workshop to evaluate and refine the process as well as introduce new members to HPC.
+- May '25 - Final report.
 
 ## Who are we?
 This project is led by Alexander De Furia, a graduate student at the University of Ottawa, working in collaboration with Dr. Paula Branco and various student associations and STEM groups focused on underrepresented communities.
