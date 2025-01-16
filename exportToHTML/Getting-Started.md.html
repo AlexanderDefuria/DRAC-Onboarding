@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Getting-Started.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #56a8f5;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Getting-Started.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">Getting Started</span>
+
+<span class="s2">This guide is designed to get up and running as a new user to the Digital Research Alliance of Canada. It covers the following topics</span><span class="s1">:</span>
+
+<span class="s0">- </span>
+
+<span class="s2">Below is an overview of the main types of nodes typically found in a DRAC HPC environment. This is intended as a brief over</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s2">1. Login Nodes</span>
+
+<span class="s1">**</span><span class="s2">Purpose</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Entry point to the cluster where you initially land after logging in.</span>
+<span class="s0">- </span><span class="s2">Lightweight tasks</span><span class="s1">: </span><span class="s2">editing files, preparing and submitting jobs, managing data.</span>
+
+<span class="s1">**</span><span class="s2">Important Usage Notes</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Not intended for running resource-intensive computations.</span>
+<span class="s0">- </span><span class="s2">Long-running or CPU-heavy processes can degrade system performance for all users.</span>
+
+<span class="s1">**</span><span class="s2">References</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s1">[</span><span class="s2">1</span><span class="s1">]: &quot;</span><span class="s2">These node types are relatively common for other HPC centers … </span><span class="s1">[</span><span class="s2">Use for</span><span class="s1">]: </span><span class="s2">editing scripts, moving files, scheduling jobs</span><span class="s1">&quot;</span>
+<span class="s0">- </span><span class="s1">[</span><span class="s2">7</span><span class="s1">]: &quot;</span><span class="s2">Login nodes are like a lobby area for the HPC … They are where you end up when you first enter.</span><span class="s1">&quot;</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s2">2. Compute Nodes</span>
+
+<span class="s1">**</span><span class="s2">Purpose</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Actual workhorses of the cluster, executing the vast majority of computational tasks.</span>
+<span class="s0">- </span><span class="s2">Accessed via the job scheduler </span><span class="s1">(</span><span class="s2">e.g., `sbatch`, `srun`, `salloc` for Slurm</span><span class="s1">)</span><span class="s2">.</span>
+
+<span class="s1">**</span><span class="s2">Important Usage Notes</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Must be allocated through the scheduler to ensure fair resource sharing.</span>
+<span class="s0">- </span><span class="s2">Optimized for heavy computation, memory, or GPU workloads depending on node configuration.</span>
+
+<span class="s1">**</span><span class="s2">References</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s1">[</span><span class="s2">1</span><span class="s1">]: &quot;</span><span class="s2">This is where jobs are executed after being passed to the scheduler … Intended for heavy computation.</span><span class="s1">&quot;</span>
+<span class="s0">- </span><span class="s1">[</span><span class="s2">7</span><span class="s1">]: &quot;</span><span class="s2">The vast majority of the nodes in an HPC are compute nodes; they are the workhorses of the HPC.</span><span class="s1">&quot;</span>
+
+<span class="s0">---</span>
+
+<span class="s0">## </span><span class="s2">3. Data Transfer Nodes </span><span class="s1">(</span><span class="s2">DTNs</span><span class="s1">) </span><span class="s2">or Data Mover Nodes</span>
+
+<span class="s1">**</span><span class="s2">Purpose</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Designed to handle file transfers in and out of the cluster.</span>
+<span class="s0">- </span><span class="s2">Optimized with high-bandwidth connections and specialized configurations to move large datasets efficiently.</span>
+
+<span class="s1">**</span><span class="s2">Important Usage Notes</span><span class="s1">**</span>
+<span class="s0">- </span><span class="s2">Preferred nodes for large or frequent data transfers </span><span class="s1">(</span><span class="s2">e.g., using `scp`, `rsync`, or </span><span class="s1">[</span><span class="s2">Globus</span><span class="s1">](</span><span class="s3">https://www.globus.org/</span><span class="s1">))</span><span class="s2">.</span>
+<span class="s0">- </span><span class="s2">Helps avoid overloading login nodes with data copy tasks.</span>
+
+<span class="s0">---</span></pre>
+</body>
+</html>

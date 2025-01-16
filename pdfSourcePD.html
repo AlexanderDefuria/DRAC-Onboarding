@@ -1,0 +1,276 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><script src="https://cdn.jsdelivr.net/npm/prismjs/prism.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-bash.min.js"></script><style>
+        .article {
+            position: relative;
+            padding-bottom: 24px;
+        }
+        
+
+        .bordered-element-rounded {
+            border: 1px solid #c4c4c4;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+        
+
+        .code-block {
+            overflow: hidden;
+            position: relative;
+            padding: 0;
+            border-radius: 8px;
+            font-variant-ligatures: none;
+            background-color: rgba(25, 25, 28, .05);
+            word-break: break-all;
+        }
+        
+
+        .control {
+            color: #19191c;
+            font-size: 16px;
+            font-weight: 670;
+        }
+        
+
+        .detached {
+            margin-block-start: 0;
+            margin-block-end: 0;
+            margin-bottom: 8px;
+        }
+        
+
+        .flex {
+            display: flex;
+        }
+        
+
+        .inline-code {
+            border-radius: 4px;
+            display: inline;
+            padding: 2px 1px;
+            font-family: JetBrains Sans,monospace;
+            background: #e6e6e6;
+        }
+        
+
+        .list {
+            list-style-type: disc;
+            padding-left: 0;
+            margin-left: 15px;
+        }
+        
+
+        .list-item {
+            margin-top: 6px;
+            margin-bottom: 6px;
+            margin-left: 4px;
+        }
+        
+
+        .main-title {
+            padding-bottom: 24px;
+            margin-top: 0;
+            font-size: 40px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prism {
+            page-break-inside: avoid;
+        }
+        
+        /* PrismJS 1.29.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+abap+abnf+actionscript+ada+agda+al+antlr4+apacheconf+apex+apl+applescript+aql+arduino+arff+armasm+arturo+asciidoc+aspnet+asm6502+asmatmel+autohotkey+autoit+avisynth+avro-idl+awk+bash+basic+batch+bbcode+bbj+bicep+birb+bison+bnf+bqn+brainfuck+brightscript+bro+bsl+c+csharp+cpp+cfscript+chaiscript+cil+cilkc+cilkcpp+clojure+cmake+cobol+coffeescript+concurnas+csp+cooklang+coq+crystal+css-extras+csv+cue+cypher+d+dart+dataweave+dax+dhall+diff+django+dns-zone-file+docker+dot+ebnf+editorconfig+eiffel+ejs+elixir+elm+etlua+erb+erlang+excel-formula+fsharp+factor+false+firestore-security-rules+flow+fortran+ftl+gml+gap+gcode+gdscript+gedcom+gettext+gherkin+git+glsl+gn+linker-script+go+go-module+gradle+graphql+groovy+haml+handlebars+haskell+haxe+hcl+hlsl+hoon+http+hpkp+hsts+ichigojam+icon+icu-message-format+idris+ignore+inform7+ini+io+j+java+javadoc+javadoclike+javastacktrace+jexl+jolie+jq+jsdoc+js-extras+json+json5+jsonp+jsstacktrace+js-templates+julia+keepalived+keyman+kotlin+kumir+kusto+latex+latte+less+lilypond+liquid+lisp+livescript+llvm+log+lolcode+lua+magma+makefile+markdown+markup-templating+mata+matlab+maxscript+mel+mermaid+metafont+mizar+mongodb+monkey+moonscript+n1ql+n4js+nand2tetris-hdl+naniscript+nasm+neon+nevod+nginx+nim+nix+nsis+objectivec+ocaml+odin+opencl+openqasm+oz+parigp+parser+pascal+pascaligo+psl+pcaxis+peoplecode+perl+php+phpdoc+php-extras+plant-uml+plsql+powerquery+powershell+processing+prolog+promql+properties+protobuf+pug+puppet+pure+purebasic+purescript+python+qsharp+q+qml+qore+r+racket+cshtml+jsx+tsx+reason+regex+rego+renpy+rescript+rest+rip+roboconf+robotframework+ruby+rust+sas+sass+scss+scala+scheme+shell-session+smali+smalltalk+smarty+sml+solidity+solution-file+soy+sparql+splunk-spl+sqf+sql+squirrel+stan+stata+iecst+stylus+supercollider+swift+systemd+t4-templating+t4-cs+t4-vb+tap+tcl+tt2+textile+toml+tremor+turtle+twig+typescript+typoscript+unrealscript+uorazor+uri+v+vala+vbnet+velocity+verilog+vhdl+vim+visual-basic+warpscript+wasm+web-idl+wgsl+wiki+wolfram+wren+xeora+xml-doc+xojo+xquery+yaml+yang+zig&plugins=highlight-keywords */
+code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre-wrap;word-spacing:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:16px;margin:0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+
+        
+
+        .prompt {
+            flex-direction: row;
+            letter-spacing: .0015em;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        
+
+        .prompt-content {
+            padding: 15px;
+            overflow: hidden;
+            flex: 1 1 auto;
+        }
+        
+
+        .prompt-content-p p {
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+
+        .prompt-icon {
+            flex: 0 0 auto;
+            margin-left: 15px;
+            margin-top: 15px;
+            fill: currentcolor;
+            width: 24px;
+            height: 24px;
+        }
+        
+
+        :root {
+            width: 95%;
+            max-width: 95vw;
+            padding: 0 0 0 30px;
+        }
+        
+        body {
+            font-family: JetBrains Sans,serif;
+        }
+        
+        a {
+            overflow-wrap: anywhere;
+            width: 100vw;
+        }
+        
+        
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Light.woff) format("woff");
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-Regular.woff) format("woff");
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: JetBrains Sans;
+            src: url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff2) format("woff2"), url(https://resources.jetbrains.com/storage/jetbrains-sans/JetBrainsSans-SemiBold.woff) format("woff");
+            font-weight: 600;
+            font-style: normal;
+        }
+        
+        
+        code {
+            display: inline;
+            word-break: break-word;
+            font-size: 15px;
+            line-height: inherit;
+            font-variant-ligatures: none;
+            font-family: JetBrains Sans,monospace;
+            white-space: pre-line;
+            overflow-wrap: break-word;
+        }
+        
+        figcaption {
+            margin-top: 5px;
+        }
+        
+        h2 {
+            padding-top: 16px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h3 {
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        h4 {
+            padding-top: 4px;
+            padding-bottom: 8px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        
+        p {
+            padding: 0;
+            border: 0;
+            line-height: 25px;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            padding-bottom: 8px;
+        }
+        
+        div {
+            display: block;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            page-break-inside: avoid;
+        }
+        
+        th, td {
+            border: 1px solid #c4c4c4;
+            padding: 10px;
+            text-align: left;
+            word-break: break-all;
+        }
+        
+        .no-bold {
+            font-weight: normal; 
+        }
+        
+        .entry {
+            display: grid;
+            grid-template-columns: auto max-content;
+            grid-template-areas: "chapter page";
+            align-items: end;
+            gap: 0 .25rem;
+            line-height: 25px;
+        }
+        
+        .toc-link-container{
+            grid-area: chapter;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .toc-link{
+            text-decoration: none;
+            color: black;
+        }
+        
+        .toc-link-container::after {
+            position: absolute;
+            padding-left: .25ch;
+            content: " . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . "
+            ". . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+            text-align: right;
+        }
+        
+        .page {
+            grid-area: page;
+            width: 30px;
+            text-align: right;
+        }
+        
+
+        .topic {
+            page-break-before: always;
+        }
+        
+
+        .warning {
+            background: rgba(244, 92, 74, .2);
+        }
+        </style><title>pdfSourcePD</title></head><body><div><section class="topic"><div><article class="article"><h1 class="main-title">Table of Contents</h1><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#2111190712">Getting Started</a></div><div class="page">2</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1703914554">Introduction to HPC</a></div><div class="page">4</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#75440785">Nodes</a></div><div class="page">5</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-72717308">Systems</a></div><div class="page">6</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#1358337240">Navigating the Environment</a></div><div class="page">9</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-490366313">Hello World</a></div><div class="page">10</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#810955309">Managing Results</a></div><div class="page">11</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-2011608852">Multiprocessing</a></div><div class="page">12</div></div><div class="entry"><div class="toc-link-container"><a class="toc-link" href="#-351316713">GPU Jobs</a></div><div class="page">13</div></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="2111190712">Getting Started</h1><p id="2111190712#d9r2sf_3">This guide is designed to get up and running as a new user to the Digital Research Alliance of Canada. It covers the following topics:</p><ul class="list" id="2111190712#d9r2sf_4" start="1"><li class="list-item" id="2111190712#d9r2sf_10"></li></ul><p id="2111190712#d9r2sf_5">Below is an overview of the main types of nodes typically found in a DRAC HPC environment. This is intended as a brief over</p><section class="detached"><h2 id="2111190712#1-login-nodes" data-toc="1-login-nodes#Getting-Started.md-1-login-nodes">1. Login Nodes</h2><p id="2111190712#d9r2sf_11"><span class="control" id="2111190712#d9r2sf_18">Purpose</span></p><ul class="list" id="2111190712#d9r2sf_12" start="1"><li class="list-item" id="2111190712#d9r2sf_19"><p>Entry point to the cluster where you initially land after logging in.</p></li><li class="list-item" id="2111190712#d9r2sf_20"><p>Lightweight tasks: editing files, preparing and submitting jobs, managing data.</p></li></ul><p id="2111190712#d9r2sf_13"><span class="control" id="2111190712#d9r2sf_21">Important Usage Notes</span></p><ul class="list" id="2111190712#d9r2sf_14" start="1"><li class="list-item" id="2111190712#d9r2sf_22"><p>Not intended for running resource-intensive computations.</p></li><li class="list-item" id="2111190712#d9r2sf_23"><p>Long-running or CPU-heavy processes can degrade system performance for all users.</p></li></ul><p id="2111190712#d9r2sf_15"><span class="control" id="2111190712#d9r2sf_24">References</span></p><ul class="list" id="2111190712#d9r2sf_16" start="1"><li class="list-item" id="2111190712#d9r2sf_25"></li><li class="list-item" id="2111190712#d9r2sf_26"></li></ul></section><section class="detached"><h2 id="2111190712#2-compute-nodes" data-toc="2-compute-nodes#Getting-Started.md-2-compute-nodes">2. Compute Nodes</h2><p id="2111190712#d9r2sf_27"><span class="control" id="2111190712#d9r2sf_34">Purpose</span></p><ul class="list" id="2111190712#d9r2sf_28" start="1"><li class="list-item" id="2111190712#d9r2sf_35"><p>Actual workhorses of the cluster, executing the vast majority of computational tasks.</p></li><li class="list-item" id="2111190712#d9r2sf_36"><p>Accessed via the job scheduler (e.g., <span class="inline-code" id="2111190712#d9r2sf_37">sbatch</span>, <span class="inline-code" id="2111190712#d9r2sf_38">srun</span>, <span class="inline-code" id="2111190712#d9r2sf_39">salloc</span> for Slurm).</p></li></ul><p id="2111190712#d9r2sf_29"><span class="control" id="2111190712#d9r2sf_40">Important Usage Notes</span></p><ul class="list" id="2111190712#d9r2sf_30" start="1"><li class="list-item" id="2111190712#d9r2sf_41"><p>Must be allocated through the scheduler to ensure fair resource sharing.</p></li><li class="list-item" id="2111190712#d9r2sf_42"><p>Optimized for heavy computation, memory, or GPU workloads depending on node configuration.</p></li></ul><p id="2111190712#d9r2sf_31"><span class="control" id="2111190712#d9r2sf_43">References</span></p><ul class="list" id="2111190712#d9r2sf_32" start="1"><li class="list-item" id="2111190712#d9r2sf_44"></li><li class="list-item" id="2111190712#d9r2sf_45"></li></ul></section><section class="detached"><h2 id="2111190712#3-data-transfer-nodes-dtns-or-data-mover-nodes" data-toc="3-data-transfer-nodes-dtns-or-data-mover-nodes#Getting-Started.md-3-data-transfer-nodes-dtns-or-data-mover-nodes">3. Data Transfer Nodes (DTNs) or Data Mover Nodes</h2><p id="2111190712#d9r2sf_46"><span class="control" id="2111190712#d9r2sf_51">Purpose</span></p><ul class="list" id="2111190712#d9r2sf_47" start="1"><li class="list-item" id="2111190712#d9r2sf_52"><p>Designed to handle file transfers in and out of the cluster.</p></li><li class="list-item" id="2111190712#d9r2sf_53"><p>Optimized with high-bandwidth connections and specialized configurations to move large datasets efficiently.</p></li></ul><p id="2111190712#d9r2sf_48"><span class="control" id="2111190712#d9r2sf_54">Important Usage Notes</span></p><ul class="list" id="2111190712#d9r2sf_49" start="1"><li class="list-item" id="2111190712#d9r2sf_55"><p>Preferred nodes for large or frequent data transfers (e.g., using <span class="inline-code" id="2111190712#d9r2sf_57">scp</span>, <span class="inline-code" id="2111190712#d9r2sf_58">rsync</span>, or Globus (<a href="https://www.globus.org/">https://www.globus.org/</a>)).</p></li><li class="list-item" id="2111190712#d9r2sf_56"><p>Helps avoid overloading login nodes with data copy tasks.</p></li></ul></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1703914554">Introduction to HPC</h1><p id="1703914554#rrqhfd_3">A brief overview of what High Performance Computing (HPC) means in the context of the Digital Research Alliance of Canada is presented here. For more details about HPC is available at the Alliance Wiki. For our purposes we will treat this as largely supplementary information.</p></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="75440785">Nodes</h1><section class="detached"><h2 id="75440785#login-nodes" data-toc="login-nodes#Nodes.md-login-nodes">Login Nodes</h2></section><section class="detached"><h2 id="75440785#compute-nodes" data-toc="compute-nodes#Nodes.md-compute-nodes">Compute Nodes</h2></section><section class="detached"><h2 id="75440785#etc" data-toc="etc#Nodes.md-etc">Etc</h2></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-72717308">Systems</h1><p id="-72717308#r147pv_3">The Digital Research Alliance of Canada provides several advanced research computing systems and services to support Canadian researchers:</p><section class="detached"><h2 id="-72717308#high-performance-computing-clusters" data-toc="high-performance-computing-clusters#Systems.md-high-performance-computing-clusters">High-Performance Computing Clusters</h2><p id="-72717308#r147pv_9">The Alliance operates several national HPC clusters (below). Each of these clusters has slightly different behaviours and for specific information the</p><ul class="list" id="-72717308#r147pv_10" start="1"><li class="list-item" id="-72717308#r147pv_11"><p><span class="control" id="-72717308#r147pv_15">Fir</span>: Replacing the Cedar cluster</p></li><li class="list-item" id="-72717308#r147pv_12"><p><span class="control" id="-72717308#r147pv_16">Rorqual</span>: Replacing the B&eacute;luga cluster</p></li><li class="list-item" id="-72717308#r147pv_13"><p><span class="control" id="-72717308#r147pv_17">Trillium</span>: Replacing Niagara and Mist clusters</p></li><li class="list-item" id="-72717308#r147pv_14"><p><span class="control" id="-72717308#r147pv_18">Nibi</span>: Replacing the Graham cluster</p></li></ul></section><section class="detached"><h2 id="-72717308#cloud-computing" data-toc="cloud-computing#Systems.md-cloud-computing">Cloud Computing</h2><p id="-72717308#r147pv_19">The Alliance provides cloud computing services, including:</p><ul class="list" id="-72717308#r147pv_20" start="1"><li class="list-item" id="-72717308#r147pv_21"><p><span class="control" id="-72717308#r147pv_23">Arbutus</span>: A virtual infrastructure cloud system</p></li><li class="list-item" id="-72717308#r147pv_22"><p><span class="control" id="-72717308#r147pv_24">Cedar Cloud</span>: Offering persistent and compute cloud resources[14]</p></li></ul></section><section class="detached"><h2 id="-72717308#storage-systems" data-toc="storage-systems#Systems.md-storage-systems">Storage Systems</h2><p id="-72717308#r147pv_25">Large-scale storage is available on the HPC clusters, including:</p><ul class="list" id="-72717308#r147pv_26" start="1"><li class="list-item" id="-72717308#r147pv_27"><p><span class="control" id="-72717308#r147pv_29">Fir storage</span>: Offering backup storage capabilities</p></li><li class="list-item" id="-72717308#r147pv_28"><p>Storage on other clusters like Graham2[14]</p></li></ul></section><section class="detached"><h2 id="-72717308#additional-services" data-toc="additional-services#Systems.md-additional-services">Additional Services</h2><ul class="list" id="-72717308#r147pv_30" start="1"><li class="list-item" id="-72717308#r147pv_31"><p><span class="control" id="-72717308#r147pv_34">Database servers</span></p></li><li class="list-item" id="-72717308#r147pv_32"><p><span class="control" id="-72717308#r147pv_35">Globus file transfer service</span></p></li><li class="list-item" id="-72717308#r147pv_33"><p><span class="control" id="-72717308#r147pv_36">Nextcloud cloud storage</span> [5]</p></li></ul></section><section class="detached"><h2 id="-72717308#software-and-support" data-toc="software-and-support#Systems.md-software-and-support">Software and Support</h2><ul class="list" id="-72717308#r147pv_37" start="1"><li class="list-item" id="-72717308#r147pv_40"><p>Hundreds of pre-installed research software packages</p></li><li class="list-item" id="-72717308#r147pv_41"><p>Technical support and training for users</p></li><li class="list-item" id="-72717308#r147pv_42"><p>Access to visualization systems[4]</p></li></ul><p id="-72717308#r147pv_38">The Alliance aims to provide a comprehensive digital research infrastructure to advance Canada's research capabilities across all academic disciplines. Researchers can access these systems free of charge, with larger resource allocations available through a competitive application process[15].</p><p id="-72717308#r147pv_39">Citations: [1] https://www.uvic.ca/systems/researchcomputing/about-us/digital-research-alliance-of-canada/index.php [2] https://alliance.smapply.ca [3] https://ised-isde.canada.ca/site/digital-research-infrastructure/en [4] https://www.ualberta.ca/en/information-services-and-technology/research-computing/digital-research-alliance-canada.html [5] https://docs.alliancecan.ca/wiki/Technical_documentation [6] https://docs.alliancecan.ca/wiki/Infrastructure_renewal [7] https://docs.alliancecan.ca/wiki/Available_software [8] https://ccdb.alliancecan.ca/security/login [9] https://alliancecan.ca/en/latest/news/alliance-receives-85m-advance-canadas-digital-research-infrastructure [10] https://alliancecan.ca/en/services/advanced-research-computing/accessing-resources [11] https://alliancecan.ca/en/services/advanced-research-computing/federation/national-host-sites [12] https://alliancecan.ca/en/services/advanced-research-computing/national-services [13] https://alliancecan.ca/en/initiatives/canadian-digital-research-infrastructure-needs-assessment [14] https://alliancecan.ca/en/services/advanced-research-computing/accessing-resources/resource-allocation-competition/available-resources [15] https://alliancecan.ca/en/services/advanced-research-computing/national-services/clusters [16] https://csc.ok.ubc.ca/catalogue/digital-research-alliance-of-canada/ [17] https://alliancecan.ca/en/our-services [18] https://alliancecan.ca/en/about/alliance [19] https://alliancecan.ca/en [20] https://alliancecan.ca/en/services/research-software/canadian-research-software-platforms [21] https://engage.alliancecan.ca</p></section></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="1358337240">Navigating the Environment</h1><p id="1358337240#-exqyw5_3">Start typing here...</p></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-490366313">Hello World</h1><p id="-490366313#z9ckexs_3">To get started with a simple practical example, we assume that you have successfully logged in to one of the nodes listed in Introduction to HPC (<a href="#75440785">Nodes</a>). You should be on a login node (<a href="#75440785#login-nodes">&quot;Login Nodes&quot; in &quot;Nodes&quot;</a>) for some general purpose system to start this guide.</p><p id="-490366313#z9ckexs_4">To schedule and manage jobs submitted on our clusters, we use the SLURM Workload Manager (<a href="https://en.wikipedia.org/wiki/Slurm_Workload_Manager">https://en.wikipedia.org/wiki/Slurm_Workload_Manager</a>). Documentation can be found here (<a href="https://slurm.schedmd.com/documentation.html">https://slurm.schedmd.com/documentation.html</a>). For now that will not be needed.</p><blockquote class="prompt flex bordered-element-rounded warning detached">
+  <svg xmlns="http://www.w3.org/2000/svg" class="prompt-icon">
+    <path d="M12.946 3.552L21.52 18.4c.424.735.33 1.6-.519 1.6H3.855c-.85 0-1.817-.865-1.392-1.6l8.573-14.848a1.103 1.103 0 0 1 1.91 0zm.545 12.948a1.5 1.5 0 1 0-1.5 1.5 1.5 1.5 0 0 0 1.5-1.5zM13 8h-2v5h2z"></path>
+  </svg>
+  <div class="prompt-content prompt-content-p"><p>All jobs must be submitted via the scheduler!</p></div>
+</blockquote>
+<p> The login nodes are not suitable to computation, it will likely be slower and more limiting than running things locally. </p><p id="-490366313#z9ckexs_6">Instead, we can dispatch slurm scripts as seen below.</p><div class="detached code-block" id="-490366313#z9ckexs_7"><pre><code class="language-bash"></code></pre></div></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="810955309">Managing Results</h1><p id="810955309#trfi2y_3">Start typing here...</p></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-2011608852">Multiprocessing</h1><p id="-2011608852#rgjz8r_3">Start typing here...</p></article></div></section><section class="topic"><div><article class="article"><h1 class="main-title" id="-351316713">GPU Jobs</h1><p id="-351316713#-4biv5w_3">Start typing here...</p></article></div></section></div></body></html>
