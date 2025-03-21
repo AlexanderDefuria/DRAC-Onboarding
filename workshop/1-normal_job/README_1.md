@@ -1,4 +1,4 @@
-# Running a Basic Serial Job on Compute Canada
+# 1. Running a Basic Job on DRAC HPC
 
 1. **Create a Job Script**
 

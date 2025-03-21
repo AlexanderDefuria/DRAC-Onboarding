@@ -1,5 +1,5 @@
 
-## Compiling and Running a C Program
+# 2. Compiling and Running a C Program 
 
 1. **Create a C Program**
 

@@ -1,4 +1,4 @@
-# Basic Linux Terminal Navigation
+# 0. Basic Linux Terminal Navigation
 
 This guide covers the basic commands for navigating the Linux terminal.
 

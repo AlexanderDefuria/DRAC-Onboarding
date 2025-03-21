@@ -17,7 +17,17 @@
         <toc-element topic="Runnning-Something-Real.md"/>
         <toc-element topic="Jupyter.md"/>
     </toc-element>
-    <toc-element topic="Monitoring-Jobs.md"/>
+    <toc-element topic="Workshop.md">
+        <toc-element topic="README_0.md"/>
+        <toc-element topic="README_1.md"/>
+        <toc-element topic="README_2.md"/>
+        <toc-element topic="README_3.md"/>
+        <toc-element topic="README_4.md"/>
+        <toc-element topic="README_5.md"/>
+    </toc-element>
+    <toc-element topic="README_6.md"/>
+    <toc-element topic="Monitoring-Jobs.md">
+    </toc-element>
     <toc-element topic="Managing-Results.md"/>
     <toc-element topic="Copying-Files.md"/>
     <toc-element topic="Multiprocessing.md"/>

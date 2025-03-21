@@ -14,4 +14,24 @@
         <description>Created after removal of "Getting Started" from Python DRAC</description>
         <accepts>getting_started.html</accepts>
     </rule>
+    <rule id="53477be2">
+        <description><![CDATA[Created after removal of "<Array-Jobs.md>" from Python DRAC]]></description>
+        <accepts>Array-Jobs.html</accepts>
+    </rule>
+    <rule id="4ba9f47c">
+        <description>Created after removal of "Empty MD Topic" from Python DRAC</description>
+        <accepts>Empty-MD-Topic.html</accepts>
+    </rule>
+    <rule id="d4ab08c">
+        <description>Created after removal of "1. Running a Basic Job on DRAC HPC" from Python DRAC</description>
+        <accepts>SBatch-Hello-World.html</accepts>
+    </rule>
+    <rule id="2183e3b0">
+        <description>Created after removal of "2. Compiling and Running a C Program" from Python DRAC</description>
+        <accepts>Compliation.html</accepts>
+    </rule>
+    <rule id="6cfe7fdf">
+        <description>Created after removal of "3. Running Parallel Jobs" from Python DRAC</description>
+        <accepts>Array-Jobs.html</accepts>
+    </rule>
 </rules>

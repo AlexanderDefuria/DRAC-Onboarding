@@ -1,5 +1,5 @@
 
-## Transferring Files To and Fro!
+# 6. Transferring Files To and Fro!
 
 1. **Upload a File to The Login Node**
 

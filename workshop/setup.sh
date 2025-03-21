@@ -25,8 +25,8 @@ for user in ${users[@]}; do
         # Copy the folder and its contents without needing to enter the password
         sshpass -p $PASSWORD scp -r $folder $user@$ADDRESS:/home/$user/projects/def-sponsor00/$user
     done
-    echo "Copying README.md to $user"
-    sshpass -p $PASSWORD scp README.md $user@$ADDRESS:/home/$user/projects/def-sponsor00/$user
+    echo "Copying README*.md to $user"
+    sshpass -p $PASSWORD scp README* $user@$ADDRESS:/home/$user/projects/def-sponsor00/$user
     echo "Copying bashrc to $user"
     sshpass -p $PASSWORD scp bashrc $user@$ADDRESS:/home/$user/.bashrc
 done

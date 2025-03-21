@@ -1,4 +1,4 @@
-## Running Parrallel Jobs
+# 3. Running Parallel Jobs
 
 1. **Create a Program**
 

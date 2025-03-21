@@ -1,23 +1,10 @@
 
-## Compiling and Running a Python Program
+# 5. Writing and Running a R Program
 
-1. **Create a Python Program**
+1. **Create a R Program**
 
-    We are going to use a python library to read a CSV file and count the number of rows in it. We have to provide the file name as an argument to the program. Create a file named `count_rows.py` with the following content. There is also a example `count_rows.py` file in this directory if you are not sure what to write.
+    Also commonly used in data analysis, R is a programming language that is especially powerful for data exploration, visualization, and statistical analysis. We are going to create a simple visualization program that plots some random data. The R script we are using is included in this directory.
 
-    ```python
-    import pandas as pd
-
-    def count_rows(file_name):
-        df = pd.read_csv(file_name, index_col=False)
-        print(df.head())
-        print(f"Number of rows in {file_name}: {len(df)}")
-    
-    if __name__ == "__main__":
-        import sys
-        count_rows(sys.argv[1])
-    ```
-    Note that we are using a library `pandas` so we have to load it before running the program. We will do this in the job script. By using a virtual environment we can improve reproducibility and avoid conflicts with other libraries.
 
 2. **Create a Job Script**
 
@@ -31,8 +18,7 @@
     #SBATCH --time=00:10:00
     #SBATCH --mem=1G
 
-    module load python/3.11
-    module load scipy-stack
+    module load python/3.8
     cp /path/to/your/csvfile.csv $SLURM_TMPDIR
 
     # Create a virtual environment and install pandas.
