@@ -1,0 +1,32 @@
+regions:
+  - ca-central-1
+  - us-east-1
+  - us-east-2
+
+blocklist:
+  - "999999999999"
+  
+accounts:
+  "897722693483": # aws-nuke-example
+    filters:
+      IAMUser:
+      - "awsnuke"
+      IAMUserPolicyAttachment:
+      - "awsnuke -> AdministratorAccess"
+      IAMUserAccessKey:
+      - "awsnuke -> AKIA5CBDRG5V5PK2ZTMP"
+
+resource-types:
+  excludes:
+    - OpsWorksApp          
+    - OpsWorksCMBackup     
+    - OpsWorksCMServer     
+    - OpsWorksCMServerState
+    - OpsWorksInstance     
+    - OpsWorksLayer        
+    - OpsWorksUserProfile  
+    - RekognitionDataset
+    - FMSPolicy
+    - FMSNotificationChannel
+    - Cloud9Environment
+    - RekognitionProject

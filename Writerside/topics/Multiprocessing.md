@@ -6,7 +6,7 @@ Multiprocessing can be a massive improvement in computational efficiency. In man
 
 Python in particular has many nuances in parallel programming due to the Global Interpreter Lock (GIL). By using a multiprocessing library like the [built-in library](https://docs.python.org/3/library/multiprocessing.html) or [pathos library](https://pathos.readthedocs.io/en/latest/) one can effectively "side step the GIL" allowing for full performance parallelization **When Implemented Correctly**. More information can be found in [this medium article](https://medium.com/@kyeg/unleashing-pythons-potential-how-pathos-and-multi-processing-overcome-the-gil-lock-and-other-2e2d590b8dfd)
 
-<warning>Many application libraries perform parallelization on their own, this often may conflict with user implemented parallelization. This occurs with libraries like <code>XGBoost</code> and <code>Sci-kit Opt</code></warning>
+<warning>Many application libraries perform parallelization on their own, this often may conflict with user implemented parallelization. This occurs with libraries like <code>XGBoost</code> and <code>Scikit Optimize</code></warning>
 
 Conflicting parallelization libraries may cause locking or other erroneous behaviour. It is good practice to disable the backend parallelization if issues arise but not before this is confirmed to be problematic, simply be aware it may arise. If issues do arise many programs have options within the python source code to disable this behaviour like <code>Sci-kit Opt</code>. Other libraries like <code>XGBoost</code> require environment variable manipulation. If you are trying to perform multiprocessing and issues are arising, check to see if any libraries are conflicting with your design.
 

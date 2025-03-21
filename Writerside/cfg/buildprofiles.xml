@@ -3,7 +3,12 @@
 <buildprofiles xsi:noNamespaceSchemaLocation="https://resources.jetbrains.com/writerside/1.0/build-profiles.xsd"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <variables></variables>
+    <variables>
+        <algolia-api-key>6e3eda092aa4efdc9583538a2d4fec9d</algolia-api-key>
+        <algolia-id>FCGWI4Y3IY</algolia-id>
+        <algolia-index>prod_GITHUB</algolia-index>
+        <algolia-show-logo>true</algolia-show-logo>
+    </variables>
     <build-profile instance="pd">
         <variables>
             <noindex-content>true</noindex-content>

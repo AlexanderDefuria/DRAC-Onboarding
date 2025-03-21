@@ -1,6 +1,6 @@
 # Hello World
 
-To get started with a simple practical example, we assume that you have successfully logged in to one of the nodes listed in [Introduction to HPC](Nodes.md). You should be on a [login node](Nodes.md#login-nodes) for some general purpose system to start this guide.
+To get started with a simple practical example, we assume that you have successfully logged in to one of the nodes listed in [Introduction to HPC](Nodes.md). You should be on a [login node](Nodes.md#1-login-nodes) for some general purpose system to start this guide.
 
 To schedule and manage jobs submitted on our clusters, we use the [SLURM Workload Manager](https://en.wikipedia.org/wiki/Slurm_Workload_Manager). Documentation can be found [here](https://slurm.schedmd.com/documentation.html). For now that will not be needed.
 

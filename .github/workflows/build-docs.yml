@@ -13,6 +13,10 @@ permissions:
 env:
   INSTANCE: 'Writerside/pd'
   DOCKER_VERSION: '243.22562'
+  ALGOLIA_APP_NAME: 'FCGWI4Y3IY'
+  ALGOLIA_INDEX_NAME: 'prod_GITHUB'
+  CONFIG_JSON_PRODUCT: 'PD'
+  CONFIG_JSON_VERSION: '1.0'
 
 jobs:
   build:
@@ -75,6 +79,39 @@ jobs:
         uses: JetBrains/writerside-checker-action@v1
         with:
           instance: ${{ env.INSTANCE }}
+
+  deploy_cloudflare:
+    needs: [build, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+          path: artifacts
+
+      - name: Unzip artifact
+        run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.artifact }}" -d dir
+
+      - name: Update Cloudflare DNS
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          CLOUDFLARE_EMAIL: ${{ secrets.CLOUDFLARE_EMAIL }}
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/zones/$CLOUDFLARE_ZONE_ID/dns_records" \
+          -H "X-Auth-Email: $CLOUDFLARE_EMAIL" \
+          -H "X-Auth-Key: $CLOUDFLARE_API_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{
+              "type": "CNAME",
+              "name": "docs.puzzlefish.org",
+              "content": "alexanderdefuria.github.io",
+              "ttl": 120,
+              "proxied": true
+            }'
+
+
   deploy:
     environment:
       name: github-pages
@@ -102,3 +139,32 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  publish-indexes:
+    needs: [ build, test, deploy, deploy_cloudflare ]
+    runs-on: ubuntu-latest
+    container:
+      image: registry.jetbrains.team/p/writerside/builder/algolia-publisher:2.0.32-3
+    steps:
+      - name: Download artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: docs
+          path: artifacts
+      - name: Unzip Algolia artifact
+        run: unzip -O UTF-8 -qq "artifacts/${{ needs.build.outputs.algolia_artifact }}" -d algolia-indexes
+      - name: Update Algolia Index
+        run: |
+          if [ -z "${{ secrets.ALGOLIA_KEY }}" ]; then
+            echo "ALGOLIA_KEY secret is not set in GitHub Secrets"
+            exit 1
+          else
+            env "algolia-key=${{ secrets.ALGOLIA_KEY }}" java -jar /opt/builder/help-publication-agent.jar \
+            update-index \
+            --application-name ${{ env.ALGOLIA_APP_NAME }} \
+            --index-name ${{ env.ALGOLIA_INDEX_NAME }} \
+            --product ${{ env.CONFIG_JSON_PRODUCT }} \
+            --version ${{ env.CONFIG_JSON_VERSION }} \
+            --index-directory algolia-indexes/ \
+            2>&1 | tee algolia-update-index-log.txt
+          fi

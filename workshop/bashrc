@@ -1,0 +1,76 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
+
+# User specific environment
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
+then
+    PATH="$HOME/.local/bin:$HOME/bin:$PATH"
+fi
+export PATH
+
+# Uncomment the following line if you don't like systemctl's auto-paging feature:
+# export SYSTEMD_PAGER=
+
+# User specific aliases and functions
+if [ -d ~/.bashrc.d ]; then
+        for rc in ~/.bashrc.d/*; do
+                if [ -f "$rc" ]; then
+                        . "$rc"
+                fi
+        done
+fi
+
+unset rc
+
+# Function to display a random Tolkien quote
+tolkien_quote() {
+    local quotes=(
+        "'All we have to decide is what to do with the time that is given us.' - Gandalf"
+        "'Not all those who wander are lost.' - J.R.R. Tolkien"
+        "'Even the smallest person can change the course of the future.' - Galadriel"
+        "'Courage is found in unlikely places.' - J.R.R. Tolkien"
+        "'Little by little, one travels far.' - J.R.R. Tolkien"
+        "'If more of us valued food and cheer and song above hoarded gold, it would be a merrier world.' - Thorin Oakenshield"
+        "'The world is indeed full of peril, and in it there are many dark places; but still there is much that is fair.' - Haldir"
+        "'It's the job that's never started as takes longest to finish.' - Samwise Gamgee"
+        "'Faithless is he that says farewell when the road darkens.' - Gimli"
+        "'There is some good in this world, and it's worth fighting for.' - Samwise Gamgee"
+        "'I would have followed you, my brother, my captain, my king.' - Boromir"
+        "'One does not simply walk into Mordor.' - Boromir"
+        "'I can't carry it for you, but I can carry you.' - Samwise Gamgee"
+        "'It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.' - Frodo"
+        "'Where there's life there's hope.' - J.R.R. Tolkien"
+        "'In this hour, I do not believe that any darkness will endure.' - J.R.R. Tolkien"
+        "'Well, I am back.' - Sam"
+        "'I am glad to be here with you Sam at the end of all things.' - Frodo"
+        "'Many that live deserve death. And some that die deserve life. Can you give it to them? Then do not be too eager to deal out death in judgement.' - Gandalf"
+        "'Deep roots are not reached by the frost.' - J.R.R. Tolkien"
+        "'The wide world is all about you: you can fence yourselves in, but you cannot forever fence it out.' - J.R.R. Tolkien"
+        "'Deeds will not be less valiant because they are unpraised.' - J.R.R. Tolkien"
+        "'Moonlight drowns out all but the brightest stars.' - J.R.R. Tolkien"
+        "'Go where you must go, and hope!' - Gandalf"
+    )
+    
+    local random_index=$((RANDOM % ${#quotes[@]}))
+    echo "Welcome back! ${quotes[$random_index]}"
+}
+
+# Only display the quote if this is an interactive shell
+if [[ $- == *i* ]]; then
+    tolkien_quote
+fi
+
+takemehome() {
+    HOMEDIR="/home/$USER/projects/def-sponsor00/$USER"
+    if test -d "$HOMEDIR"; then
+        cd "$HOMEDIR"
+    else
+        echo "Directory $HOMEDIR does not exist."
+    fi
+}
+
+takemehome
