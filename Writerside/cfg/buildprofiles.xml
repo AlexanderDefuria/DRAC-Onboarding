@@ -9,9 +9,9 @@
         <algolia-index>prod_GITHUB</algolia-index>
         <algolia-show-logo>true</algolia-show-logo>
     </variables>
-    <build-profile instance="pd">
+    <build-profile instance="dgs">
         <variables>
-            <noindex-content>true</noindex-content>
+            <noindex-content>false</noindex-content>
         </variables>
     </build-profile>
     <build-profile instance="a">
