@@ -30,6 +30,13 @@ jobs:
         with:
           fetch-depth: 0
 
+      # Run bash script
+      - name: Copy over updated workshop files.
+        run: |
+          cd workshop
+          ./update_docs_md.sh
+          cd ..
+
       - name: Define instance id and artifacts
         id: define-ids
         run: |
