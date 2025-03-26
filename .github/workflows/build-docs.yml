@@ -11,7 +11,7 @@ permissions:
   pages: write
 
 env:
-  INSTANCE: 'Writerside/pd'
+  INSTANCE: 'Writerside/pgs'
   DOCKER_VERSION: '243.22562'
   ALGOLIA_APP_NAME: 'FCGWI4Y3IY'
   ALGOLIA_INDEX_NAME: 'prod_GITHUB'
