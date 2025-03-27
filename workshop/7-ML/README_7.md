@@ -9,7 +9,6 @@ This guide introduces you to the basics of machine learning, walks you through b
    - [Types of Machine Learning](#types-of-machine-learning)
 3. [Building Your First ML Model](#building-your-first-ml-model)
 4. [Running ML Jobs on HPC](#running-ml-jobs-on-hpc)
-5. [Additional Resources](#additional-resources)
 
 ## Introduction
 Machine learning is a field of artificial intelligence that enables systems to learn and improve from experience without explicit programming. Unlike traditional programming where humans write explicit instructions, machine learning algorithms learn patterns from data and make decisions based on that knowledge. This guide will introduce you to the fundamental concepts and help you create your first machine learning model.
@@ -237,4 +236,37 @@ Semi-supervised learning combines a small amount of labeled data with a large am
 
     ```bash
     cat iris_ml.out
+    ```
+
+5. **For GPU-Accelerated Jobs**
+
+   If you're working with deep learning models that can benefit from GPU acceleration, modify your job script:
+
+    ```bash
+    #!/bin/bash
+    #SBATCH --job-name=dl_job
+    #SBATCH --output=dl_job.out
+    #SBATCH --error=dl_job.err
+    #SBATCH --time=01:00:00
+    #SBATCH --mem=4G
+    #SBATCH --gres=gpu:1
+    #SBATCH --account=def-sponsor00
+
+    # Load required modules
+    module load python/3.9 cuda/11.4
+    
+    # Create a virtual environment and install required packages
+    python -m venv $SLURM_TMPDIR/venv
+    source $SLURM_TMPDIR/venv/bin/activate
+    pip install numpy pandas matplotlib tensorflow torch
+
+    # Copy your deep learning script
+    cp deep_learning_model.py $SLURM_TMPDIR
+    cd $SLURM_TMPDIR
+
+    # Run the script
+    python deep_learning_model.py
+    
+    # Copy results back
+    cp -r results/ $SLURM_SUBMIT_DIR
     ```
