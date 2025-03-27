@@ -9,7 +9,6 @@ This guide introduces you to the basics of machine learning, walks you through b
     - [Types of Machine Learning](#types-of-machine-learning)
 3. [Building Your First ML Model](#building-your-first-ml-model)
 4. [Running ML Jobs on HPC](#running-ml-jobs-on-hpc)
-5. [Additional Resources](#additional-resources)
 
 ## Introduction
 Machine learning is a field of artificial intelligence that enables systems to learn and improve from experience without explicit programming. Unlike traditional programming where humans write explicit instructions, machine learning algorithms learn patterns from data and make decisions based on that knowledge. This guide will introduce you to the fundamental concepts and help you create your first machine learning model.
