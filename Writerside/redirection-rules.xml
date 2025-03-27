@@ -34,4 +34,8 @@
         <description>Created after removal of "3. Running Parallel Jobs" from Python DRAC</description>
         <accepts>Array-Jobs.html</accepts>
     </rule>
+    <rule id="7de4648f">
+        <description>Created after removal of "7. GPU Programs" from DRAC Getting Started</description>
+        <accepts>README_7.html</accepts>
+    </rule>
 </rules>

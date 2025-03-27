@@ -23,9 +23,11 @@ module "aws" {
   image        = "ami-07fbc9d69b1aa88b9"
 
   instances = {
-    mgmt  = { type = "m5.large",  count = 1, tags = ["mgmt", "puppet", "nfs"] },
-    login = { type = "m5.2xlarge", count = 1, tags = ["login", "public", "proxy"] },
-    node = { type = "m5.large", count = 2, tags = ["node"] },
+    mgmt  =    { type = "m5.xlarge",    count = 1, tags = ["mgmt", "puppet", "nfs"] },
+    login =    { type = "m5.4xlarge",  count = 1, tags = ["login", "public", "proxy"] },
+    node =     { type = "m5.large",    count = 30, tags = ["node"] },
+    # gpu-node = { type = "g4dn.xlarge", count = 2, tags = ["node"], image="ami-0d1b6c42f602ac3e7" },
+    # gpu-node-spot = { type = "g4dn.xlarge", count = 1, tags = ["node", "spot"], wait_for_fulfillment = true, block_duration_mintues = 60 },
   }
 
   # var.pool is managed by Slurm through Terraform REST API.
@@ -56,6 +58,7 @@ module "aws" {
   #region            = "us-east-1"
   #region            = "us-east-2"
   region            = "ca-central-1"
+  availability_zone = "ca-central-1a"
 }
 
 output "accounts" {

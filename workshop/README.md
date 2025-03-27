@@ -1,4 +1,4 @@
-# HPC Workshop 1
+# HPC Workshop
 
 This workshop will introduce you to the basics of using the HPC cluster. We will cover the following topics:
 - Logging in to the HPC cluster

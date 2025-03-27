@@ -1,7 +1,5 @@
 regions:
   - ca-central-1
-  - us-east-1
-  - us-east-2
 
 blocklist:
   - "999999999999"
@@ -10,11 +8,12 @@ accounts:
   "897722693483": # aws-nuke-example
     filters:
       IAMUser:
-      - "awsnuke"
+      - "awsnukev2"
       IAMUserPolicyAttachment:
       - "awsnuke -> AdministratorAccess"
       IAMUserAccessKey:
-      - "awsnuke -> AKIA5CBDRG5V5PK2ZTMP"
+      - "awsnuke -> AKIA5CBDRG5VXXIAH7S3"
+        # - "awsnuke -> AKIA5CBDRG5V5PK2ZTMP"
 
 resource-types:
   excludes:

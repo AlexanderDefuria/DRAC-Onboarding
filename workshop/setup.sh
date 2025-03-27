@@ -7,6 +7,7 @@ for i in $(seq -f "%02g" 1 $N); do
     users+=("user$i")
 done
 
+# shellcheck disable=SC2145
 echo "Users: ${users[@]}"
 
 # Connection info
@@ -16,10 +17,12 @@ ADDRESS="magical.puzzlefish.org"
 # List of folders to copy
 folders=$(find . -maxdepth 1 -type d -name '[0-9]-*')
 
+# shellcheck disable=SC2068
 for user in ${users[@]}; do
     # Delete the files on the server
     # sshpass -p $PASSWORD ssh $user@$ADDRESS "rm -rf /home/$user/projects/def-sponsor00/$user/*"
 
+    # shellcheck disable=SC2068
     for folder in ${folders[@]}; do
         echo "Copying $folder to $user"
         # Copy the folder and its contents without needing to enter the password
