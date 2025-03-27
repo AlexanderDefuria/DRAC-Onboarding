@@ -26,8 +26,8 @@ To run this script we simply execute the following:
 Running locally you might expect the output to be printed directly to the terminal. In this case if that happens, it is a problem. All the output of a slurm job, once run, will be printed to a `.out` file in the directory the job was run from. There may be some delay between dispatching your job and seeing output, this is okay and not a problem. To check on the status of jobs we can run the following command:
 <code-block lang="bash" prompt="$">squeue -u $USER</code-block>
 
-This should output something similar to the following:
-<code-block lang="Bash">TODO</code-block>
+This should output the following in a `.out` file:
+<code-block lang="Bash">Hello World!</code-block>
 The job may be in one of several states, Pending, Running, or some other state related to a Compute Node status.
 
 Once the job has been accepted and you should see a new file in your current directory `slurm-XXXX.out`. Within this file there should be the output of `helloworld.sh`. You can check this using vim, or cat.
