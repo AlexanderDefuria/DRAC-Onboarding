@@ -1,7 +1,3 @@
-
-# 7. Writing and Running Machine Learning
-
-
 # 7. Writing and Running Machine Learning
 
 This guide introduces you to the basics of machine learning, walks you through building your first model, and explains how to run ML jobs on high-performance computing systems. You'll learn fundamental concepts, write code for a classification model, and discover resources for further exploration.
