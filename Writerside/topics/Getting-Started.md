@@ -13,4 +13,3 @@ This guide is designed to get up and running as a new user to the Digital Resear
 - [](Managing-Results.md)
 - [](Copying-Files.md)
 - [](Multiprocessing.md)
-- [](GPU-Jobs.md) *(Coming Soon!)*
